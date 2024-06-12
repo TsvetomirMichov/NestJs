@@ -17,7 +17,7 @@ export class EmployeesController {
   findAll(@Query('role') role?: "ADMIN" | "ENGINEER" | "INTERN") {
     return this.employeesService.findAll();
   }
-
+ 
   @Throttle({ short: { ttl: 1500, limit: 1 } })
   @Get(':id')
   findOne(@Param('id') id: string) {
